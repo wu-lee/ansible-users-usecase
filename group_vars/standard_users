@@ -1,0 +1,7 @@
+# Gists don't alow directories, this file must be moved to
+# group_vars/standard_users to work properly.
+
+# Define a subset of our users as "standard"
+users:
+  - alice
+  - bob

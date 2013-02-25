@@ -1,0 +1,26 @@
+
+Invoke this example like this:
+
+    git clone git://github.com/ansible/ansible.git
+    git clone git@github.com:wu-lee/ansible-users-usecase.git
+
+    cd ansible-users-usecase
+    . ../ansible/hacking/env-setup
+
+Then either edit ansible_hosts to change "some.host.net" to a host you
+can access, and run:
+
+    ansible-playbook -i ansible_hosts --check -v users.yml
+
+Or alternatively, if you don't have a host to run against, you can try
+localhost.  Edit ansible_hosts, replacing "some.host.net" with
+"localhost", and run:
+
+    ansible-playbook -i ansible_hosts --check -v users.yml -c local
+
+The --check paramter should prevent anything actually being changed,
+whilst still showing the problem, which is that the create_userX.yml
+task files (where "X" is A or B) get included but invoked only once
+with a an $item value "${users}", rather than twice with $item values
+"alice" and "bob".
+

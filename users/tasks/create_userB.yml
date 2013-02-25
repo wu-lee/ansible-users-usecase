@@ -1,0 +1,17 @@
+--- # create_userB.yml
+# This gets the user attributes directly via $item and $userdefs
+
+- action: debug msg="create_userB.yml - user is '${item}' pubkey is '${userdefs.${item}.pubkey}'"
+
+- name: Create the "${item}" user
+  action: user
+          state=present
+          name="${item}"
+          createhome=yes
+
+- name: Insert authorized_keys for user "${item}"
+  action: authorized_key
+          state=present
+          user="${item}"
+          key="${userdefs.${item}.pubkey}"
+  only_if: is_set('${userdefs.${item}.pubkey}')

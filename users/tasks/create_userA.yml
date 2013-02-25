@@ -1,0 +1,16 @@
+--- # create_userA.yml
+# This get the user attributes via parameterised variables $user and $pubkey
+- action: debug msg="create_userA.yml - item is '${item}' user is '${user}' pubkey is '${pubkey}'"
+
+- name: Create the "${user}" user
+  action: user
+          state=present
+          name="${user}"
+          createhome=yes
+
+- name: Insert authorized_keys for user "$item"
+  action: authorized_key
+          state=present
+          user="${user}"
+          key="${pubkey}"
+  only_if: is_set('${pubkey}')

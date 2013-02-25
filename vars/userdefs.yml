@@ -1,0 +1,17 @@
+--- # vars_userdefs.yml
+
+# This defines the attributes of all know users.  There would normally
+# be more than in this stripped example.
+
+userdefs:
+  root:
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCv68suJPUZCOqOQ1CDR/Abzs+Akw6Dy+XHwSwoZdtRPbiM0jEs5LK+BiwuMcZWvsQlt5/vgvYEA7tmvRJWyBfEoWvPbMshGii69us/dV8/rsDGB31zlEzBe3jGenWjsNeFk0yCFHksx3juKWvrMP2bLa10fade2W4QOWVvSxU0MaXLW2r6TshwP3+OAML/OAmR3v1jsW7mTYsI9B9N61yGUWjbbtYY/j/EstiWnqHG+cSBpke6ZtRIukC4uvYBD4E+v2Hc12CJW3B5QIh1wt1t9L46ssXbG5ihPzNtYvc/fnyQRvg7IUPfLbMa5WOIhupdXNZOhIwH5MvXW4kiMUmX ansible-root"
+
+  alice:
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOw7IGtvD3yr5BUm1MTX4TawkPc/21NDi0DQujEVaLlEW6WwpQA0pLgOgV/MlhUstqfPYC35vrTRpWqoLa2R2oNw3D1wsNoDgUSCBpViRsAktwCpvSadq3IjGigQY9UCkOzZZY1WIu9Tg1QBYiOWo4S9bPVe6s/tc4YoYHXXBvQZalwhZMSyfBtcOdRxhtbNxLE2lv/2TybO/gH+ch0/oObAbHd+gxdhDIc048EK1VJKIhoFEDXYdz21kIyvDBuZjAN/pGBqHn+BZXNlfBzTjwq2TsrNM0DsWdzye1BKn+uB0ZLTqAN1jx7z5I3Q7mO1iTv0+ruVTJ4/M48sydr/DL alice"
+
+  bob:
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNcdxyfWLHH1sufVi0H709zxQlWDqHxKs00puBUEXs45BrHFjCxypmtKzx0meuekKbNECmiFpYG5IIXRXPSqyawZcY2eoxt6XK4BL7934vLsUUDNkZaLR9SETpq81G/stImbkYpEqP+5e/V/xryuguXznYM0KSICG8GAmupD6Xld8NGBqiZitgICIqmSoRehnZnv2YodHJW+Vyu5qSVcoK4I9uXTG5/aiRL9JtJl6XjE2xrcMX0juDTCn4FRTAnt/OPrycW9Sj1/QoOYQ6E/nrBfycF48Y4PfgURfmqDJsL4uY33u68/xpwkysnd10/wWdDXEYxXWAnegQS9XN+xCP bob"
+
+  charlie:
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC32wF/OcOotV40CKKCgBvLbOqmT6c8f6d6RaY7OVSYjZezmkRXAQMLjMd+Oo0nJtGUvFVc8nQ07F/99sqIU3mbVD+9sNGcnvhLExFTyI5+YjxFP0AvTvwZDoi1kvp5o9ZWAXcEOPk1zfiSF/Z1hCHsm2X5vi2wopPuERr0MC+iRvezlHoDkzxMypFylfAzo2QJBgdaExpdCng6iCCE3c5o683RdaJT1NG4MEJ3vjzcltWmGnDf91F9ZbWhks0kgSVD5+8W3U5RJxWMV8dKvtzMRvXCxiDk7SPwy64ND9JVxuKxC93vZv+vD5JprGLvk1cANhJwRftAU0o/86O5XU/B charlie"

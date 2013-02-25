@@ -1,0 +1,33 @@
+--- # users.yml
+
+- name:  Create / remove users as specified in the $users list, defined in group_vars
+  user: root
+  hosts: all
+
+  vars_files:
+    # This defines a set of *possible* users' attributes,
+    # keyed by name in a dictionary $userdefs.
+    # (See below.)
+    vars/userdefs.yml
+
+# $users list intended to be defined in group_vars/*,
+# but that seems to fail to interpolate.
+# However, uncomment this and things work as expected
+#  vars:
+#    users:
+#      - bob
+#      - charlie
+
+  tasks:
+    - name: check our variables are defined ok
+      action: debug msg="User $item has key ${userdefs.${item}.pubkey}"
+      with_items: ${users}
+
+    # This aims to call create.yml task file for each user, which does the work
+    # Unfortunately the variables don't get expanded. 
+    - include: users/tasks/create_userA.yml user="${item}" pubkey="${userdefs.${item}.pubkey}"
+      with_items: ${users}
+
+    # Doing it this way with implicit parameter passing via $item also doesn't seem to work
+    - include: users/tasks/create_userB.yml
+      with_items: ${users}
